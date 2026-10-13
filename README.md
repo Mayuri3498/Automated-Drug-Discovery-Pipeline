@@ -2,7 +2,7 @@
 A typical SBVS workflow, run manually, spans six to eight disconnected tools: structure-repair software, a separate ligand-preparation toolkit, a docking engine, manual visual inspection of poses, an external website for ADMET prediction, and finally a spreadsheet for filtering.
 Each transition between these tools is a place where file formats break, results get mismatched, and reproducibility becomes irretractable because no one can fully reconstruct, months later, exactly what was clicked and in what order.
 This pipeline removes that fragmentation by chaining every stage into a single, traceable, file-to-file data flow.
-A user supplies only two things: a target PDB ID (or structure file) and a list of PubChem CIDs and the pipeline carries that input through structure preparation, ligand preparation, automatic pocket detection, docking, energy filtering, interaction-aware pose selection, ADMET/PK prediction, and final rule-based filtering, without requiring the user to manually operate any of the underlying scientific software.
+A user supplies only two things: a target PDB ID and a list of PubChem CIDs and the pipeline carries that input through structure preparation, ligand preparation, automatic pocket detection, docking, energy filtering, interaction-aware pose selection, ADMET/PK prediction, and final rule-based filtering, without requiring the user to manually operate any of the underlying scientific software.
 
 ## What makes it genuinely “one-stop” in practice:
 
@@ -50,5 +50,16 @@ Windows/PowerShell environment and the ordered commands used to execute the work
 7. MGLTools/AutoDockTools - Receptor PDBQT preparation
 8. Playwright - Browser automation; install the library imported by the local DeepPK_results.py
 9. pandas, Pillow, ReportLab - Tabular processing, image handling and PDF generation where used
+
+# Create Main Conda Environment
+The following commands creates the environment and install all the packages required for the entire workflow.
+
+```
+conda create -n docking python=3.11
+conda activate docking
+conda install -c conda-forge openmm pdbfixer rdkit meeko gemmi pandas pillow reportlab
+python -m pip install playwright
+python -m playwright install chromium
+```
 
 
