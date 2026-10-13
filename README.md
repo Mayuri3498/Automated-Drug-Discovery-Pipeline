@@ -101,3 +101,34 @@ If a bound ligand is present in the structure is present, a gridbox will be defi
 python .\Grid_gen.py 2VHW_PDBREDO_selected.pdb
 ```
 Verify gridbox.txt, vina_config.txt, interacting_residues.csv and residues.txt.
+
+## Step 5: Run AutoDock Vina
+Place the vina.exe file in the working directory. 
+
+```
+python .\Vina_run.py
+```
+Verify Docking_Results contains per-ligand out.pdbqt and log.txt, and inspect docked/undocked summary CSVs.
+
+## Step 6: Extract binding energies and apply the cutoff
+Enter the cuttoff binding energy without units. Binding energy of the given value and lower will be reported
+
+```
+python .\BE_data.py
+```
+Verify binding_energies.csv, cutoff_binding_energies.csv and Cutoff_Results.
+
+## Step 7: Select best poses and create the top-screened list
+Based on the interacting residues given in the residues.txt file are checked for the all the 9 poses of the docked molecules. If the molecules show consistent interactions to those mentioned in the residues.txt file are mentioned and reported with the best pose and type on interactions in the interactions_summary.csv file.
+
+```
+python .\Best_pose.py
+```
+It generates Best_Poses, interaction summaries and top10_screened.csv.
+
+
+
+
+
+
+
