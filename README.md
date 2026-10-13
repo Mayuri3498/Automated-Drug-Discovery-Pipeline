@@ -23,7 +23,7 @@ A user supplies only two things: a target PDB ID (or structure file) and a list 
 
 <img width="818" height="983" alt="image" src="https://github.com/user-attachments/assets/f4c0351f-4286-442c-b6bd-c841f3c6ea4d" />
 
-#System Requirements, Environment Setup and Execution Protocol
+# System Requirements, Environment Setup and Execution Protocol
 
 Windows/PowerShell environment and the ordered commands used to execute the workflow.
 
