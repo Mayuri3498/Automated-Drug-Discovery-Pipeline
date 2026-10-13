@@ -61,5 +61,43 @@ conda install -c conda-forge openmm pdbfixer rdkit meeko gemmi pandas pillow rep
 python -m pip install playwright
 python -m playwright install chromium
 ```
+# Optional separate RDKit drawing environment
+Use this separate environment only if you want to isolate/test RDKit drawing dependencies.
 
+```
+conda create -n rdkit_draw -c conda-forge python=3.11 rdkit pandas pillow
+conda activate rdkit_draw
+python -c "from rdkit import Chem; from rdkit.Chem import Draw; print('RDKit 2D drawing OK')"
+```
+# Steps for Running the Entire Protocol
 
+## Step 1: Activate the environment and enter the project folder
+Check the prompt shows the docking environment and the correct working directory. 
+
+```
+conda activate docking
+cd "E:\Automation\PDB_Redo"
+```
+## Step 2: Prepare the target protein
+Enter the correct PDB ID. A more refined structure can also be downloaded from PDBRedo if the given PDB ID is registered in the PDBRedo database. Make sure that the correct paths to MGL_PYTHON and PREPARE_RECEPTOR in the code are mentioned. Make sure that correct path to the directory where MGLTools have been installed. 
+
+```
+python .\pdb_redo.py
+```
+After running the script, verify the cleaned/selected PDB and receptor PDBQT outputs exist.
+
+## Step 3: Download and prepare the ligand library
+A summary file needs to be downloaded from PubChem database containing CIDS.
+
+```
+python .\PubChem.py
+```
+Verify SDF files in Molecules foler and prepared ligand PDB/PDBQT folders are created with the PDB and PDBQT files resectively.
+
+## Step 4: Generate the grid box and target-residue list
+If a bound ligand is present in the structure is present, a gridbox will be defined and interacting residues (residues.txt) file will be generated.
+
+```
+python .\Grid_gen.py 2VHW_PDBREDO_selected.pdb
+```
+Verify gridbox.txt, vina_config.txt, interacting_residues.csv and residues.txt.
