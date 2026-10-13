@@ -4,8 +4,7 @@ Each transition between these tools is a place where file formats break, results
 This pipeline removes that fragmentation by chaining every stage into a single, traceable, file-to-file data flow.
 A user supplies only two things: a target PDB ID (or structure file) and a list of PubChem CIDs and the pipeline carries that input through structure preparation, ligand preparation, automatic pocket detection, docking, energy filtering, interaction-aware pose selection, ADMET/PK prediction, and final rule-based filtering, without requiring the user to manually operate any of the underlying scientific software.
 
-**What makes it genuinely “one-stop” in practice:
-**
+## What makes it genuinely “one-stop” in practice:
 
 • Automatic structure sourcing and repair - no manual structure cleanup in a separate molecular viewer.
 
@@ -19,7 +18,7 @@ A user supplies only two things: a target PDB ID (or structure file) and a list 
 
 • A final, rule-based filter that outputs a ready-to-review shortlist, complete with 2D structures and a single consolidated PDF.
 
-#Pipeline Workflow at a glance
+# Pipeline Workflow at a glance
 
 <img width="818" height="983" alt="image" src="https://github.com/user-attachments/assets/f4c0351f-4286-442c-b6bd-c841f3c6ea4d" />
 
@@ -27,8 +26,8 @@ A user supplies only two things: a target PDB ID (or structure file) and a list 
 
 Windows/PowerShell environment and the ordered commands used to execute the workflow.
 
-**Operating-system and hardware requirements
-**
+## Operating-system and hardware requirements
+
 •	Windows with PowerShell and a working Conda installation (Anaconda or Miniconda).
 
 •	Internet access for PDB/PDB-REDO, PubChem and Deep-PK website access.
