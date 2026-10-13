@@ -26,7 +26,7 @@ A user supplies only two things: a target PDB ID (or structure file) and a list 
 
 Windows/PowerShell environment and the ordered commands used to execute the workflow.
 
-## Operating-system and hardware requirements
+# Operating-system and hardware requirements
 
 •	Windows with PowerShell and a working Conda installation (Anaconda or Miniconda).
 
