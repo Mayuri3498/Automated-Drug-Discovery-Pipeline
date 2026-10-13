@@ -126,6 +126,26 @@ python .\Best_pose.py
 ```
 It generates Best_Poses, interaction summaries and top10_screened.csv.
 
+## Step 8: Run Deep-PK on the selected molecules
+DeepPK_results.py uses top10_screened.csv to determine which molecules should enter the ADMET stage. It then reads the original SDF folder and matches selected records to their original structures. This is important because the original SDF retains molecular connectivity and stereochemical information more reliably than reconstructing a molecule from a docking PDB. Each selected SDF molecule is converted to canonical isomeric SMILES using RDKit. A SMILES input file is generated for Deep-PK. Metadata records molecule number, SDF file, canonical SMILES and source information. selected_molecules.json preserves the mapping used during the run.
+
+```
+python .\DeepPK_results.py --sdf_folder "E:\Automation\PDB_Redo\molecules" --top10_csv "E:\Automation\PDB_Redo\top10_screened.csv" --output_folder "E:\Automation\PDB_Redo\DeepPK"
+```
+Verify ADMET submission completes and the main results CSV is saved in DeepPK.
+
+## Step 9: Filter Deep-PK results
+Based on the drug-likeness and ADMET properties the molecules were screened. The parameters are selective and can be changed upon user requirements directly in the code.
+
+```
+conda activate rdkit_draw
+python -c "from rdkit import Chem; from rdkit.Chem import Draw; print('RDKit 2D drawing OK')"
+python .\DeepPK_filter_molecules.py --input_csv "E:\Automation\PDB_Redo\DeepPK\DeepPK_all_properties.csv" --output_folder "E:\Automation\PDB_Redo\Filtered_mols"
+```
+If --input_csv expects a file, pass DeepPK_all_properties.csv rather than the DeepPK folder.
+
+
+
 
 
 
