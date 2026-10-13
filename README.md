@@ -18,3 +18,27 @@ A user supplies only two things: a target PDB ID (or structure file) and a list 
 • A direct, automated bridge into Deep-PK ADMET prediction - no manual re-uploading of shortlisted molecules to an external website.
 
 • A final, rule-based filter that outputs a ready-to-review shortlist, complete with 2D structures and a single consolidated PDF.
+
+#Pipeline Workflow at a glance
+
+<img width="818" height="983" alt="image" src="https://github.com/user-attachments/assets/f4c0351f-4286-442c-b6bd-c841f3c6ea4d" />
+
+#System Requirements, Environment Setup and Execution Protocol
+
+Windows/PowerShell environment and the ordered commands used to execute the workflow.
+
+**Operating-system and hardware requirements
+**
+•	Windows with PowerShell and a working Conda installation (Anaconda or Miniconda).
+
+•	Internet access for PDB/PDB-REDO, PubChem and Deep-PK website access.
+
+•	AutoDock Vina installed and accessible from PowerShell.
+
+•	MGLTools/AutoDockTools available for receptor PDBQT preparation.
+
+•	A supported Chrome browser for browser-driven Deep-PK submissions.
+
+•	Adequate disk space for ligand libraries, docking outputs, logs, downloaded result tables, images and PDF reports.
+
+
