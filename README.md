@@ -40,4 +40,15 @@ Windows/PowerShell environment and the ordered commands used to execute the work
 
 •	Adequate disk space for ligand libraries, docking outputs, logs, downloaded result tables, images and PDF reports.
 
+# Software and Package Requirements
+1. Python 3.11 + Conda - Python runtime and environment management
+2. OpenMM and PDBFixer - Protein structure processing and repair
+3. RDKit - Ligand handling, SMILES conversion and 2D drawing
+4. Meeko - Ligand PDBQT preparation
+5. Gemmi - Structure-file parsing where used
+6. AutoDock Vina - Molecular docking executable
+7. MGLTools/AutoDockTools - Receptor PDBQT preparation
+8. Playwright - Browser automation; install the library imported by the local DeepPK_results.py
+9. pandas, Pillow, ReportLab - Tabular processing, image handling and PDF generation where used
+
 
