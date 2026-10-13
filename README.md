@@ -144,6 +144,14 @@ python .\DeepPK_filter_molecules.py --input_csv "E:\Automation\PDB_Redo\DeepPK\D
 ```
 If --input_csv expects a file, pass DeepPK_all_properties.csv rather than the DeepPK folder.
 
+# Contact
+
+If you have questions or suggestions regarding the pipeline, please contact using the given email id: mayuribarshetty34@gmail.com
+
+
+
+
+
 
 
 
