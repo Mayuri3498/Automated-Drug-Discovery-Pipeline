@@ -6,6 +6,7 @@ A user supplies only two things: a target PDB ID (or structure file) and a list 
 
 **What makes it genuinely “one-stop” in practice:
 **
+
 • Automatic structure sourcing and repair - no manual structure cleanup in a separate molecular viewer.
 
 • Automatic pocket/grid definition from the co-crystallized ligand - no manual box-picking, which is one of the most error-prone manual steps in conventional docking workflows.
